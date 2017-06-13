@@ -1,0 +1,28 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "authentication": {
+    "secret": "a90edb0f0b18324f7c1e4dcfdc31bbcdea119d2937ff67a1cf14202265031248bb15e8d2adde1fbd081eae4bc24137f66efaff10e68c6af936ccb57853e6a81b94aea16789796b54fdd97c5328197a9e7548c04330d497ff0f29ad6ea94b5ee8f3775628eae00859e881ea33846cf7deb3b0eb3ffd6eeefe6a79f5e8fe374913de0db7ccc853387b94b78648e190230a6e746dc072b98f6c3557282c19ed2cef38a938c787abd649fb7034afa90e238b6ea9b948eb682907a8462fa5a372be70fef330f110843aac090eee08116f75f938e8a786326dec35bd10f33d947be797e842774b39d1d5f38b6c4d7a885f195eacf53c8f16342c0cd3e2b8f67f177f5c",
+    "strategies": [
+      "jwt"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "type": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    }
+  },
+  "mongodb": "mongodb://localhost:27017/trckr"
+}
