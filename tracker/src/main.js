@@ -3,7 +3,6 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import * as services from './services'
 
 Vue.config.productionTip = false
 
@@ -12,13 +11,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  data: {
-    matches: services.match.find()
-  },
-  components: { App },
-  methods: {
-    getMatch () {
-      return services.match.find()
-    }
-  }
+  components: { App }
 })

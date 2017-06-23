@@ -1,11 +1,7 @@
 <template>
   <div id="app">
-    <h1>Welcome to the Tracker</h1>
-    <img src="./assets/logo.png">
+    <h1>Welcome to the Tracker </h1>
     <router-view></router-view>
-    <li v-for="value in matches">
-    {{ value }}
-    </li>
   </div>
 </template>
 
