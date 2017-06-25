@@ -1,6 +1,6 @@
 <template>
   <div class="hello">
-    <h1>{{ title }}</h1>
+    <h1></h1>
     <div>
       <ul>
         {{ matches.length }}
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import * as services from '../services'
+// import * as services from '../services'
 
 export default {
   name: 'hello',
@@ -27,11 +27,11 @@ export default {
     }
   },
   created () {
-    services.match.on('created', match => {
+    this.$services.match.on('created', match => {
       this.matches.push(match)
     })
 
-    services.match.find({
+    this.$services.match.find({
       query: {
         $limit: 100
       }
@@ -42,7 +42,7 @@ export default {
   methods: {
     addMatch () {
       console.log('Clicked')
-      services.match.create({
+      this.$services.match.create({
         formation: '4-1-2-1-2',
         ownScore: 4,
         rivalScore: 2
