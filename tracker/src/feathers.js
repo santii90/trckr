@@ -1,5 +1,5 @@
 import rest from 'feathers-rest/client'
-const jQuery = require('jquery')
+// const jQuery = require('jquery')
 // Include and set up feathers client
 const Feathers = require('feathers/client')
 const hooks = require('feathers-hooks')
@@ -14,7 +14,7 @@ console.log(finalHost)
 // const socket = io(finalHost)
 
 const feathers = Feathers()
-.configure(rest(finalHost).jquery(jQuery))
+.configure(rest(finalHost).fetch(window.fetch.bind(window)))
 .configure(hooks())
 .configure(authentication({storage: window.localStorage}))
 
