@@ -25,9 +25,11 @@
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive",
-    "heroku-postbuild": "cd tracker/ && node build/build.js"
+    "mocha": "mocha test/ --recursive"
   },
+  "start": { 
+    "postinstall": "cd tracker/ && node build/build.js" 
+    },
   "dependencies": {
     "body-parser": "^1.17.2",
     "compression": "^1.6.2",
