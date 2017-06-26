@@ -1,5 +1,5 @@
 import rest from 'feathers-rest/client'
-import jQuery from 'jquery'
+const jQuery = require('jquery')
 // Include and set up feathers client
 const Feathers = require('feathers/client')
 const hooks = require('feathers-hooks')
