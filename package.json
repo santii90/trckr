@@ -26,7 +26,7 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
     "mocha": "mocha test/ --recursive",
-    "postinstall": "cd tracker/ && node build/build.js"
+    "heroku-postbuild": "heroku run vjsb.sh"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
