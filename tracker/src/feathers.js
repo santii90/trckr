@@ -14,7 +14,7 @@ console.log(finalHost)
 // const socket = io(finalHost)
 
 const feathers = Feathers()
-.configure(rest(finalHost).jquery(jQuery))
+.configure(rest('http://trckrr.herokuapp.com:48231').jquery(jQuery))
 .configure(hooks())
 .configure(authentication({storage: window.localStorage}))
 
