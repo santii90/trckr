@@ -1,6 +1,6 @@
 {
   "host": "trckrr.herokuapp.com",
-  "port": "PORT",
+  "port": 8080,
   "public": "../public/",
   "mongodb": "mongodb://test:test@ds139082.mlab.com:39082/trckr"
 }
