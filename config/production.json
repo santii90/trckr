@@ -1,4 +1,6 @@
 {
   "host": "trckr-app.feathersjs.com",
-  "port": "PORT"
+  "port": "PORT",
+  "public": "../public/",
+  "mongodb": "mongodb://test:test@ds139082.mlab.com:39082/trckr"
 }
