@@ -9,6 +9,7 @@ const authentication = require('feathers-authentication-client')
 var port = process.env.PORT || 3030
 var host = process.env.HOST || 'http://localhost'
 var finalHost = host + ':' + port
+console.log(process.env.PORT + '   ' + process.env.HOST)
 console.log(finalHost)
 // const socket = io(finalHost)
 
