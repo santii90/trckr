@@ -25,11 +25,9 @@
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
-    "mocha": "mocha test/ --recursive"
+    "mocha": "mocha test/ --recursive",
+    "postinstall": "cd tracker/ && node build/build.js"
   },
-  "start": { 
-    "postinstall": "cd tracker/ && node build/build.js" 
-    },
   "dependencies": {
     "body-parser": "^1.17.2",
     "compression": "^1.6.2",
