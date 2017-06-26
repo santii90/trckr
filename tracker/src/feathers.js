@@ -14,7 +14,7 @@ console.log(finalHost)
 // const socket = io(finalHost)
 
 const feathers = Feathers()
-.configure(rest(finalHost).fetch(window.fetch.bind(window)))
+.configure(rest('https://trckrr.herokuapp.com:8080').fetch(window.fetch.bind(window)))
 .configure(hooks())
 .configure(authentication({storage: window.localStorage}))
 
