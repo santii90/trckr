@@ -1,16 +1,18 @@
 <template>
   <div class="hello">
-    <h1></h1>
-    <div>
-      <ul>
-        {{ matches.length }}
-        <li v-for="value in matches" :key="value.id">
-          {{ value.formation }} :
-          <b>{{value.ownScore}} - {{value.rivalScore}}</b>
-        </li>
-      </ul>
+    <div class="results" style="width: 800px">
+    <el-table :data="matches" style="width: 100%">
+      <el-table-column prop="formation" label="Formation" width="180">
+      </el-table-column>
+      <el-table-column prop="ownScore" label="Own">
+      </el-table-column>
+      <el-table-column prop="rivalScore" label="Rival">
+      </el-table-column>
+    </el-table>
     </div>
-    <button @click="addMatch">Add Match</button>
+    <div>
+      <el-button @click="addMatch" type="primary">Add Match</el-button>
+    </div>
   </div>
 </template>
 
@@ -72,4 +74,11 @@ li {
 a {
   color: #42b983;
 }
+
+.results {
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
 </style>

@@ -1,4 +1,4 @@
-// THIS FILE IS NOT VEING USED, FEATHERS.JS AND ROUTER.JS DO THE CONF
+// THIS FILE IS NOT BEING USED, FEATHERS.JS AND ROUTER.JS DO THE CONF
 // /services/index.js
 import feathers from 'feathers/client'
 const hooks = require('feathers-hooks')
