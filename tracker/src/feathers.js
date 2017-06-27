@@ -9,8 +9,8 @@ const authentication = require('feathers-authentication-client')
 // const socket = io(finalHost)
 
 const feathers = Feathers()
-.configure(rest('http://localhost:3000').jquery(jQuery))
-// .configure(rest('http://138.197.91.189').jquery(jQuery))
+// .configure(rest('http://localhost:3000').jquery(jQuery))
+.configure(rest('http://138.197.91.189').jquery(jQuery))
 .configure(hooks())
 .configure(authentication({storage: window.localStorage}))
 
