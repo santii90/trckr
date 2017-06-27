@@ -7,9 +7,9 @@ const authentication = require('feathers-authentication-client')
 // const socketio = require('feathers-socketio/client')
 // const io = require('socket.io-client')
 // const socket = io(finalHost)
-console.log('trying to connect')
+
 const feathers = Feathers()
-.configure(rest('http://localhost:3000').jquery(jQuery))
+.configure(rest('http://138.197.91.189').jquery(jQuery))
 .configure(hooks())
 .configure(authentication({storage: window.localStorage}))
 
