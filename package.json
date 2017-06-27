@@ -21,6 +21,9 @@
     "node": ">= 6.0.0",
     "npm": ">= 3.0.0"
   },
+  "env_production" : {
+    "NODE_ENV": "production"
+  },
   "scripts": {
     "test": "npm run eslint && npm run mocha",
     "eslint": "eslint src/. test/. --config .eslintrc.json",
