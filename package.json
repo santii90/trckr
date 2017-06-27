@@ -26,7 +26,7 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
     "mocha": "mocha test/ --recursive",
-    "buildvue": "cd tracker && npm run build"
+    "buildvue": "cd tracker && npm run build && git add public/static/*"
   },
   "dependencies": {
     "body-parser": "^1.17.2",
