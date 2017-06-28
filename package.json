@@ -29,7 +29,7 @@
     "eslint": "eslint src/. test/. --config .eslintrc.json",
     "start": "node src/",
     "mocha": "mocha test/ --recursive",
-    "ready": "cd tracker && npm run build"
+    "deploy-vue": "cd tracker && npm run build"
   },
   "dependencies": {
     "body-parser": "^1.17.2",

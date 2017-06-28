@@ -11,7 +11,7 @@
 export default {
   name: 'app',
   components: {
-    navbar: require('./components/navbar.vue')
+    navbar: require('./components/utils/navbar.vue')
   }
 }
 </script>
