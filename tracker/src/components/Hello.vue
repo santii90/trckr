@@ -1,18 +1,25 @@
 <template>
   <div class="hello">
-    <div class="results" style="width: 800px">
-    <el-table :data="matches" style="width: 100%">
-      <el-table-column prop="formation" label="Formation" width="180">
-      </el-table-column>
-      <el-table-column prop="ownScore" label="Own">
-      </el-table-column>
-      <el-table-column prop="rivalScore" label="Rival">
-      </el-table-column>
-    </el-table>
-    </div>
-    <div>
-      <el-button @click="addMatch" type="primary">Add Match</el-button>
-    </div>
+    <el-row>
+      <el-col :span="12">
+        <div class="grid-content bg-purple-dark">
+          <el-table :data="matches" style="width: 100%">
+            <el-table-column prop="formation" label="Formation" width="180">
+            </el-table-column>
+            <el-table-column prop="ownScore" label="Own">
+            </el-table-column>
+            <el-table-column prop="rivalScore" label="Rival">
+            </el-table-column>
+          </el-table>
+        </div>
+        <div>
+          <el-button @click="addMatch" type="primary">Add Match</el-button>
+        </div>
+      </el-col>
+      <el-col :span="12">
+        <div class="grid-content bg-purple-light"></div>
+      </el-col>
+    </el-row>
   </div>
 </template>
 
@@ -21,14 +28,14 @@
 
 export default {
   name: 'hello',
-  data () {
+  data() {
     return {
       msg: 'Welcome to Your Vue.js App',
       matches: [],
       test: ['hi', 'bye']
     }
   },
-  created () {
+  created() {
     this.$services.match.on('created', match => {
       this.matches.push(match)
     })
@@ -42,7 +49,7 @@ export default {
     })
   },
   methods: {
-    addMatch () {
+    addMatch() {
       console.log('Clicked')
       this.$services.match.create({
         formation: '4-1-2-1-2',
@@ -80,5 +87,4 @@ a {
   padding: 10px;
   text-align: center;
 }
-
 </style>

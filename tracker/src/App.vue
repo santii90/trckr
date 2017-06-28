@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <navbar></navbar>
     <h1>Welcome to the Tracker </h1>
     <router-view></router-view>
   </div>
@@ -7,7 +8,10 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    navbar: require('./components/navbar.vue')
+  }
 }
 </script>
 
@@ -18,6 +22,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+navbar {
+  padding-bottom: 10px;
 }
 </style>
