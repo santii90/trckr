@@ -1,30 +1,36 @@
 <template>
-  <el-menu theme="dark" :default-active="activeIndex" class="el-menu-demo" mode="horizontal" @select="handleSelect">
-    <el-menu-item index="1">Processing Center</el-menu-item>
-    <el-submenu index="2">
-      <template slot="title">Workspace</template>
-      <el-menu-item index="2-1">item one</el-menu-item>
-      <el-menu-item index="2-2">item two</el-menu-item>
-      <el-menu-item index="2-3">item three</el-menu-item>
-    </el-submenu>
-    <el-menu-item index="3">
-      <a href="https://www.ele.me" target="_blank">Orders</a>
-    </el-menu-item>
-  </el-menu>
+  <nav class="nav has-shadow">
+    <div class="container">
+      <div class="nav-left">
+        <a class="nav-item">
+          <!--<img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">-->
+        </a>
+        <a class="nav-item is-tab is-hidden-mobile is-active">Dashboard</a>
+        <a class="nav-item is-tab is-hidden-mobile">Matches</a>
+        <a class="nav-item is-tab is-hidden-mobile">Formations</a>
+        <a class="nav-item is-tab is-hidden-mobile">Custom Tactics</a>
+      </div>
+      <span class="nav-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        <a class="nav-item is-tab is-hidden-tablet is-active">Dashboard</a>
+        <a class="nav-item is-tab is-hidden-tablet">Matches</a>
+        <a class="nav-item is-tab is-hidden-tablet">Formations</a>
+        <a class="nav-item is-tab is-hidden-tablet">Custom Tactics</a>
+        <a class="nav-item is-tab">
+          Profile
+        </a>
+        <a class="nav-item is-tab">Log out</a>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'navbar',
-  data() {
-    return {
-      activeIndex: '1'
-    }
-  },
-  methods: {
-    handleSelect(key, keyPath) {
-      console.log(key, keyPath)
-    }
-  }
+  name: 'navbar'
 }
 </script>

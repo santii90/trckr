@@ -3,6 +3,7 @@
     <navbar></navbar>
     <h1>Welcome to the Tracker </h1>
     <router-view></router-view>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </div>
 </template>
 
@@ -15,6 +16,9 @@ export default {
 }
 </script>
 
+<style lang="scss">
+  @import "~bulma/bulma.sass";
+</style>
 <style>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -24,6 +28,7 @@ export default {
   color: #2c3e50;
 }
 navbar {
+  padding-top: 0px;
   padding-bottom: 10px;
 }
 </style>

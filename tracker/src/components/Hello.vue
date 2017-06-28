@@ -1,25 +1,25 @@
 <template>
   <div class="hello">
-    <el-row>
-      <el-col :span="12">
-        <div class="grid-content bg-purple-dark">
-          <el-table :data="matches" style="width: 100%">
-            <el-table-column prop="formation" label="Formation" width="180">
-            </el-table-column>
-            <el-table-column prop="ownScore" label="Own">
-            </el-table-column>
-            <el-table-column prop="rivalScore" label="Rival">
-            </el-table-column>
-          </el-table>
-        </div>
-        <div>
-          <el-button @click="addMatch" type="primary">Add Match</el-button>
-        </div>
-      </el-col>
-      <el-col :span="12">
-        <div class="grid-content bg-purple-light"></div>
-      </el-col>
-    </el-row>
+    <table class="table">
+      <thead>
+        <tr>
+          <th v-for="key in columns" v-bind:key="key">
+            {{ key }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="key in matches" :id="key._id" @click="selectMatch" v-bind:key="key" v-bind:class="{ 'is-selected': isSel }">
+          <th>{{ key.formation }}</th>
+          <td>{{ key.ownScore }}</td>
+          <td>{{ key.rivalScore }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button class="button is-primary" @click="addMatch">Add a new Match</button>
+      <button class="button is-danger" @click="deleteLastMatch">Delete last Match</button>
+    </div>
   </div>
 </template>
 
@@ -31,24 +31,28 @@ export default {
   data() {
     return {
       msg: 'Welcome to Your Vue.js App',
+      columns: ['Formation', 'Own Score', 'Rival Score'],
       matches: [],
-      test: ['hi', 'bye']
+      test: ['hi', 'bye'],
+      isSel: false
     }
   },
   created() {
     this.$services.match.on('created', match => {
       this.matches.push(match)
     })
-
-    this.$services.match.find({
-      query: {
-        $limit: 100
-      }
-    }).then(page => {
-      this.matches = page.data
-    })
+    this.getMatches()
   },
   methods: {
+    getMatches() {
+      this.$services.match.find({
+        query: {
+          $limit: 100
+        }
+      }).then(page => {
+        this.matches = page.data
+      })
+    },
     addMatch() {
       console.log('Clicked')
       this.$services.match.create({
@@ -57,6 +61,13 @@ export default {
         rivalScore: 2
       })
       this.getMatches
+    },
+    selectMatch() {
+      this.isSel = !this.isSel
+    },
+    deleteLastMatch() {
+      var id = document.getElementsByClassName('is-selected')[0].getAttribute('id')
+      this.$services.match.remove(id).then(this.getMatches)
     }
   }
 }
@@ -82,8 +93,9 @@ a {
   color: #42b983;
 }
 
-.results {
-  margin: 0 auto;
+.table {
+  width: 800px;
+  margin: 30px auto;
   padding: 10px;
   text-align: center;
 }
