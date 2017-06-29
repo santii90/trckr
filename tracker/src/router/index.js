@@ -2,7 +2,9 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Dashboard from '@/components/Dashboard'
 import feathers from '../services/feathers'
+import VeeValidate from 'vee-validate'
 
+Vue.use(VeeValidate)
 Vue.use(Router)
 
 // Include it as a CommonJS module

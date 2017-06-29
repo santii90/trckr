@@ -17,7 +17,6 @@
           </tr>
         </tbody>
       </table>
-      <button class="button is-primary" @click="addMatch">Add a new Match</button>
       <button class="button is-danger" @click="deleteLastMatch">Delete last Match</button>
     </div>
     <div class="column">
@@ -26,8 +25,8 @@
           <label class="label">Formation</label>
           <p class="control">
             <span class="select">
-              <select v-model="iformation">
-                <option selected>4-1-2-1-2</option>
+              <select v-model="newMatch.formation">
+                <option>4-1-2-1-2</option>
                 <option>4-3-2-1</option>
               </select>
             </span>
@@ -36,13 +35,13 @@
         <div class="field">
           <label class="label">Own Score</label>
           <p class="control">
-            <input v-model="iownScore" class="input" type="text" placeholder="Text input">
+            <input v-model="newMatch.ownScore" class="input" type="text" placeholder="Text input">
           </p>
         </div>
         <div class="field">
           <label class="label">Rival Score</label>
           <p class="control">
-            <input v-model="irivalScore" class="input" type="text" placeholder="Text input">
+            <input v-model="newMatch.rivalScore" class="input" type="text" placeholder="Text input">
           </p>
         </div>
         <button class="button is-primary" @click="addMatch">Add a new Match</button>
@@ -61,9 +60,11 @@ export default {
       columns: ['Formation', 'Own Score', 'Rival Score'],
       matches: [],
       isSel: false,
-      iformation: '',
-      iownScore: 0,
-      irivalScore: 0
+      newMatch: {
+        formation: '4-1-2-1-2',
+        ownScore: 0,
+        rivalScore: 0
+      }
     }
   },
   created() {
@@ -82,12 +83,9 @@ export default {
         this.matches = page.data
       })
     },
-    addMatch() {
-      this.$services.match.create({
-        formation: this.iformation,
-        ownScore: this.iownScore,
-        rivalScore: this.irivalScore
-      })
+    addMatch(e) {
+      e.preventDefault()
+      this.$services.match.create(this.newMatch)
       this.getMatches
     },
     selectMatch() {

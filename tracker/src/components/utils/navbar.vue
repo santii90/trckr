@@ -7,7 +7,7 @@
         </a>
         <a class="nav-item is-tab is-hidden-mobile is-active">Dashboard</a>
         <a class="nav-item is-tab is-hidden-mobile">Matches</a>
-        <a class="nav-item is-tab is-hidden-mobile">Formations</a>
+        <a class="nav-item is-tab is-hidden-mobile">My Teams</a>
         <a class="nav-item is-tab is-hidden-mobile">Custom Tactics</a>
       </div>
       <span class="nav-toggle">
@@ -18,7 +18,7 @@
       <div class="nav-right nav-menu">
         <a class="nav-item is-tab is-hidden-tablet is-active">Dashboard</a>
         <a class="nav-item is-tab is-hidden-tablet">Matches</a>
-        <a class="nav-item is-tab is-hidden-tablet">Formations</a>
+        <a class="nav-item is-tab is-hidden-tablet">My Teams</a>
         <a class="nav-item is-tab is-hidden-tablet">Custom Tactics</a>
         <a class="nav-item is-tab">
           Profile
