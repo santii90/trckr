@@ -1,29 +1,31 @@
 <template>
-  <div class="hello columns">
-    <div class="column is-three-quarter">
-      <table class="table">
-        <thead>
-          <tr>
-            <th v-for="key in columns" v-bind:key="key">
-              {{ key }}
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="key in matches" :id="key._id" @click="selectMatch" v-bind:key="key" v-bind:class="{ 'is-selected': isSel }">
-            <th>{{ key.formation }}</th>
-            <td>{{ key.ownScore }}</td>
-            <td>{{ key.rivalScore }}</td>
-          </tr>
-        </tbody>
-      </table>
-      <button class="button is-danger" @click="deleteLastMatch">Delete last Match</button>
-    </div>
-    <div class="column">
-      <form>
+  <div class="hello">
+    <div class="columns">
+      <div class="column is-two-thirds box">
+        <h3>Last Played Matches</h3>
+        <table class="table">
+          <thead>
+            <tr>
+              <th v-for="key in columns" v-bind:key="key">
+                {{ key }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="key in matches" :id="key._id" @click="selectMatch" v-bind:key="key" v-bind:class="{ 'is-selected': isSel }">
+              <th>{{ key.formation }}</th>
+              <td>{{ key.ownScore }}</td>
+              <td>{{ key.rivalScore }}</td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="button is-danger" @click="deleteLastMatch">Delete last Match</button>
+      </div>
+      <div class="column box">
+        <h3>Log a New Match</h3>
         <div class="field">
           <label class="label">Formation</label>
-          <p class="control">
+          <p class="control" style="text-align: center;">
             <span class="select">
               <select v-model="newMatch.formation">
                 <option>4-1-2-1-2</option>
@@ -32,20 +34,26 @@
             </span>
           </p>
         </div>
-        <div class="field">
-          <label class="label">Own Score</label>
-          <p class="control">
-            <input v-model="newMatch.ownScore" class="input" type="text" placeholder="Text input">
-          </p>
-        </div>
-        <div class="field">
-          <label class="label">Rival Score</label>
-          <p class="control">
-            <input v-model="newMatch.rivalScore" class="input" type="text" placeholder="Text input">
-          </p>
+        <div class="columns is-mobile">
+          <div class="column is-half">
+            <div class="field">
+                <label class="label">Own Score</label>
+                <p class="control">
+                  <input v-model="newMatch.ownScore" class="input" type="text" placeholder="Text input">
+                </p>
+              </div>
+          </div>
+          <div class="column">
+            <div class="field">
+                <label class="label">Rival Score</label>
+                <p class="control">
+                  <input v-model="newMatch.rivalScore" class="input" type="text" placeholder="Text input">
+                </p>
+              </div>
+          </div>
         </div>
         <button class="button is-primary" @click="addMatch">Add a new Match</button>
-      </form>
+      </div>
     </div>
   </div>
 </template>
@@ -101,32 +109,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1,
-h2 {
-  font-weight: normal;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
-}
-
-.table {
-  width: 800px;
-  margin: 30px auto;
-  padding: 10px;
-  text-align: center;
-}
-
 form {
   padding: 30px;
+}
+
+.hello {
+  padding-top: 50px;
+  margin: 0 30px 0 30px;
+}
+.box {
+  padding: 30px;
+  margin: 10px 10px; 
 }
 </style>

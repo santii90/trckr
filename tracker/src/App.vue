@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <navbar></navbar>
-    <h1>Welcome to the Tracker </h1>
     <router-view></router-view>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   </div>
